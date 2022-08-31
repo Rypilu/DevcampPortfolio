@@ -1,5 +1,8 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: %i[ show edit update destroy ]
+  # %i[ ] # Non-interpolated Array of symbols, separated by whitespace
+  # %I[ ] # Interpolated Array of symbols, separated by whitespace
+  # before_action :set_blog, only: %i[ show edit update destroy ]
 
   # GET /blogs or /blogs.json
   def index
@@ -11,11 +14,13 @@ class BlogsController < ApplicationController
   end
 
   # GET /blogs/new
+  # instantiates the new form element -- new.html.erb -- create is doing the work and saving to db
   def new
     @blog = Blog.new
   end
 
   # GET /blogs/1/edit
+  # # instantiates the edit form element -- edit.html.erb -- update func saves changes to db
   def edit
   end
 
@@ -25,11 +30,9 @@ class BlogsController < ApplicationController
 
     respond_to do |format|
       if @blog.save
-        format.html { redirect_to blog_url(@blog), notice: "Blog was successfully created." }
-        format.json { render :show, status: :created, location: @blog }
+        format.html { redirect_to @blog, notice: "Your post is now live!" }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -38,11 +41,9 @@ class BlogsController < ApplicationController
   def update
     respond_to do |format|
       if @blog.update(blog_params)
-        format.html { redirect_to blog_url(@blog), notice: "Blog was successfully updated." }
-        format.json { render :show, status: :ok, location: @blog }
+        format.html { redirect_to @blog, notice: "Blog was successfully updated." }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -53,7 +54,6 @@ class BlogsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to blogs_url, notice: "Blog was successfully destroyed." }
-      format.json { head :no_content }
     end
   end
 
