@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :portfolios, except: [:show]
   # custom route method singular instead of out of the box plural
   get 'angular-items', to: 'portfolios#angular'
