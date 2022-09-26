@@ -3,6 +3,7 @@ class BlogsController < ApplicationController
   # %i[ ] # Non-interpolated Array of symbols, separated by whitespace
   # %I[ ] # Interpolated Array of symbols, separated by whitespace
   # before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
+  layout 'blog'
 
   # GET /blogs or /blogs.json
   def index
