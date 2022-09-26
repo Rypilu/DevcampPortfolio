@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   include DeviseAllowList
   include SetSource
   include CurrentUserConcern
+  include DefaultPageContentConcern
+
 
 
 end
