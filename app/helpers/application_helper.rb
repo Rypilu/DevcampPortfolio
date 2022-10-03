@@ -9,22 +9,16 @@ module ApplicationHelper
       (link_to "Login", new_user_session_path)
     end
   end
-end
 
-# with ruby if you have two returns it will return the last option so below returns "Something" That's the problem
-# we're fixing above with:
-# (link_to "Sign Up", new_user_registration_path) +
-#         "<br>".html_safe +
-#       (link_to "Login", new_user_session_path)
-#
-# This is stupid and needs to be fixed
-#
-# def sample_method
-#   x = 2
-#   if x == 1
-#     "yaya"
-#   else
-#     "No"
-#     "something"
-#   end
-# end
+
+
+
+  def source_helper(layout_name)
+    if session[:source]
+      greeting = "Thanks for visiting me from #{session[:source]} and you are on the #{layout_name} layout"
+      content_tag(:p, greeting, class: "source-greeting" )
+    end
+  end
+
+
+end
