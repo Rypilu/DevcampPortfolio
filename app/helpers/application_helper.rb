@@ -20,5 +20,9 @@ module ApplicationHelper
     end
   end
 
+  def copyright_generator
+    PiluskiViewTool::Renderer.copyright 'Ryan Piluski', 'All rights reserved'
+  end
+
 
 end
