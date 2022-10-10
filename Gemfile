@@ -59,3 +59,4 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'bootstrap', '~> 4.6.2'
 gem 'jquery-rails'
 gem 'piluski_view_tool', git: 'https://github.com/Rypilu/piluski_view_tool', branch: :main
+gem 'petergate', '~> 3.0'
