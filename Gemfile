@@ -56,3 +56,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'friendly_id', '~> 5.4.0'
 gem 'devise', '~> 4.8', '>= 4.8.1'
+gem 'bootstrap', '~> 4.6.2'
+gem 'jquery-rails'
+gem 'piluski_view_tool', git: 'https://github.com/Rypilu/piluski_view_tool', branch: :main
