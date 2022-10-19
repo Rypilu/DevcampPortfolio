@@ -123,3 +123,12 @@ body {
 .register-text {
   text-align: right;
 }
+
+
+// This is saying for any card classes nested inside login class (set in registrations/sessions/new) use these styles
+.login > .card {
+  width: 22rem;
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+}
