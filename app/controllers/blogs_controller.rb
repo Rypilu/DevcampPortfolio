@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
   # %I[ ] # Interpolated Array of symbols, separated by whitespace
   # before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
   layout 'blog'
-  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :toggle_status]}, site_admin: :all
 
   # GET /blogs or /blogs.json
   def index
