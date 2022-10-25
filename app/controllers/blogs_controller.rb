@@ -9,7 +9,7 @@ class BlogsController < ApplicationController
   # GET /blogs or /blogs.json
   def index
     # Can't remember when special_blogs was implemented but its defined in the model
-    @blogs = Blog.special_blogs
+    @blogs = Blog.page(params[:page]).per(5)
     @page_title = "My Portfolio Blog"
   end
 
