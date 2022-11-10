@@ -30,7 +30,6 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #333;
 }
 
 body {
@@ -49,7 +48,7 @@ body {
   height: 100%; /* For at least Firefox */
   min-height: 100%;
   -webkit-box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
-  box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
+          box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
 }
 .site-wrapper-inner {
   display: table-cell;
@@ -68,6 +67,7 @@ body {
 /*
  * Header
  */
+
 .masthead {
   margin-bottom: 2rem;
 }
@@ -78,7 +78,7 @@ body {
 
 .nav-masthead .nav-link {
   padding: .25rem 0;
-  font-weight: 700;
+  font-weight: bold;
   color: rgba(255, 255, 255, .5);
   background-color: transparent;
   border-bottom: .25rem solid transparent;
@@ -127,6 +127,40 @@ body {
   color: rgba(255, 255, 255, .5);
 }
 
+/*
+ * Affix and center
+ */
+
+@media (min-width: 40em) {
+  /* Pull out the header and footer */
+  .masthead {
+    position: fixed;
+    top: 0;
+  }
+  .mastfoot {
+    position: fixed;
+    bottom: 0;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  /* Handle the widths */
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+
+@media (min-width: 62em) {
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 55rem;
+  }
+}
+
 
 
 /*
@@ -158,3 +192,31 @@ body {
   margin-left: 15px;
   margin-right: 15px;
 }
+
+#background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background: image-url('greece_home_page.png') no-repeat;
+  background-size: cover;
+}
+
+.app-footer {
+  color: white;
+}
+
+
+
+
+
+
+
+
+
